@@ -1,0 +1,4 @@
+pine_tree_1 objects/mapOverlays/Trees 1 10 54 10 54
+house objects/mapOverlays/Buildings 1
+wooden_bridge_1 objects/mapOverlays/Bridges 2
+mushroom_1 objects/mapOverlays/Vegetation 0

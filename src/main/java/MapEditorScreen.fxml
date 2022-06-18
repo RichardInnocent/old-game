@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.paint.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.canvas.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="MapEditorController">
+   <children>
+      <AnchorPane layoutX="-100.0" layoutY="-100.0" prefHeight="500.0" prefWidth="1000.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <BorderPane layoutX="400.0" layoutY="150.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <left>
+                  <Canvas fx:id="canvas" height="475.0" width="740.0" BorderPane.alignment="CENTER" />
+               </left>
+               <top>
+                  <MenuBar fx:id="menuBar" BorderPane.alignment="CENTER">
+                    <menus>
+                      <Menu mnemonicParsing="false" text="File">
+                           <items>
+                              <MenuItem mnemonicParsing="false" onAction="#fileSave" text="Save" />
+                              <MenuItem mnemonicParsing="false" onAction="#fileSaveAs" text="Save As" />
+                              <MenuItem mnemonicParsing="false" onAction="#fileLoadMap" text="Load Map" />
+                              <MenuItem fx:id="FileExitEditor" mnemonicParsing="false" onAction="#fileExitEditor" text="Exit Editor" />
+                           </items>
+                      </Menu>
+                      <Menu mnemonicParsing="false" text="Edit">
+                           <items>
+                              <MenuItem mnemonicParsing="false" onAction="#editSetAllMapTilesToSelectedTile" text="Set all map tiles to sel. tile" />
+                           </items></Menu>
+                      <Menu mnemonicParsing="false" text="Help">
+                        <items>
+                          <MenuItem mnemonicParsing="false" text="About" />
+                        </items>
+                      </Menu>
+                    </menus>
+                  </MenuBar>
+               </top>
+               <right>
+                  <BorderPane prefHeight="475.0" prefWidth="262.0" BorderPane.alignment="CENTER">
+                     <top>
+                        <TreeView fx:id="treeView" prefHeight="435.0" prefWidth="252.0" BorderPane.alignment="CENTER" />
+                     </top>
+                     <bottom>
+                        <GridPane minHeight="40.0" BorderPane.alignment="CENTER">
+                          <columnConstraints>
+                            <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                            <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                          </columnConstraints>
+                          <rowConstraints>
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="SOMETIMES" />
+                          </rowConstraints>
+                           <children>
+                              <Button fx:id="deleteCreateButton" mnemonicParsing="false" onAction="#deleteCreateButtonPressed" text="Delete Items" textFill="RED" GridPane.columnIndex="2">
+                                 <GridPane.margin>
+                                    <Insets />
+                                 </GridPane.margin>
+                              </Button>
+                              <Button fx:id="snapToGridButton" mnemonicParsing="false" onAction="#toggleSnap" text="Snap to Grid" />
+                              <Button fx:id="toggleGridButton" mnemonicParsing="false" onAction="#toggleGrid" text="Show Grid" GridPane.columnIndex="1" />
+                           </children>
+                        </GridPane>
+                     </bottom>
+                  </BorderPane>
+               </right>
+            </BorderPane>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>
